@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{fffc4730-e8d0-42b2-9830-2a817a991ab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{3cd94dfc-c9f6-4700-92ed-f42ac49c1302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GFX">
+      <UniqueIdentifier>{be2fec91-bc19-4a0d-8192-04c3b11544aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\Helpers">
+      <UniqueIdentifier>{b6670f61-6878-4c17-a746-2ce3dc49083f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\Game">
+      <UniqueIdentifier>{68a4fc98-ccba-4170-b7c1-ae389b752980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\File">
+      <UniqueIdentifier>{d2d66efa-3bfc-4220-b614-05aa15371763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\UI">
+      <UniqueIdentifier>{de991ef7-25f4-433f-b35b-794b9889e1ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\Input">
+      <UniqueIdentifier>{bcb9d1ac-c240-4e70-8294-d847088d6c8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{a4b83add-b829-430d-ace9-a74705d6b3a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GFX">
+      <UniqueIdentifier>{082b5c2a-493f-489d-94ff-d9a0e84776fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{a2963f8b-01b0-43bc-987e-86bb048203f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\UI">
+      <UniqueIdentifier>{8c16f5b9-985a-4e53-9a9d-772455aafed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\Game">
+      <UniqueIdentifier>{c2c62d66-ae70-4bc6-9533-8d7fd04ac149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\Input">
+      <UniqueIdentifier>{fc624927-5c4f-47bb-9843-908bef54ec5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\Files">
+      <UniqueIdentifier>{14402348-29cd-4a57-acff-f7a56a92d758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\Helpers">
+      <UniqueIdentifier>{07b80ac8-9b3c-4aad-ad51-cd540352fa72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{1ae10347-2d2a-4b81-aa6e-2f33452d18a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{d68a0cac-7bbb-4b1c-855d-56708d229dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Scene">
+      <UniqueIdentifier>{f85ebf7a-21d7-446c-b503-1414f3258b74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Components">
+      <UniqueIdentifier>{0bf1ef49-7765-4c53-9a68-e00be1fd264f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Components">
+      <UniqueIdentifier>{fb175038-7c3c-4551-9a01-9f9a201fd76d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\UI\Controls">
+      <UniqueIdentifier>{4c834417-787c-4765-aaac-835508b2a583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\UI\Controls">
+      <UniqueIdentifier>{e6c74a3f-4771-4fdc-90a4-03211daf3f89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_src\SystemMessage.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CTimer.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSystemSpriteRenderPipeline.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSystemResourceManager.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSystemMessagePipeline.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGraphicsInitBuffer.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CTransform.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CTexture.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CTextRenderer.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSprite.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CShaderOrthographic.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CShader.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CD3DGraphics.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CFont.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameSystemRender.h">
+      <Filter>Header Files\System\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameSystemControlScheme.h">
+      <Filter>Header Files\System\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameSystemData.h">
+      <Filter>Header Files\System\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameSystemLogic.h">
+      <Filter>Header Files\System\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CDirectoryFileList.h">
+      <Filter>Header Files\System\File</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CFileContainer.h">
+      <Filter>Header Files\System\File</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CFontFileContainer.h">
+      <Filter>Header Files\System\File</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSurface.h">
+      <Filter>Header Files\GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\ComponentHelper.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\FileHelper.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\Helper.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\MemoryHelper.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\StringHelper.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\SystemHelper.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUIMenu.h">
+      <Filter>Header Files\System\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUIManager.h">
+      <Filter>Header Files\System\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CKeyboardInput.h">
+      <Filter>Header Files\System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CWindow.h">
+      <Filter>Header Files\System\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CVector4.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\Vectors.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CVector2.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CVector3.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CComponent.h">
+      <Filter>Header Files\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameobject.h">
+      <Filter>Header Files\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameobjectList.h">
+      <Filter>Header Files\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGameScene.h">
+      <Filter>Header Files\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUIListItem.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUIControl.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUIList.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUITextIO.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUICheckBox.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CSourceAnalyser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUIContainer.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CCompActorAnim.h">
+      <Filter>Header Files\Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CCompAnimController.h">
+      <Filter>Header Files\Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CAnimation.h">
+      <Filter>Header Files\Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CGMOBJFileContainer.h">
+      <Filter>Header Files\System\File</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CCompAnimEditor.h">
+      <Filter>Header Files\Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUI.h">
+      <Filter>Header Files\System\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CUISlider.h">
+      <Filter>Header Files\System\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="_src\CMouseInput.h">
+      <Filter>Header Files\System\Helpers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CTimer.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSystemTextRenderPipeline.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSystemResourceManager.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSystemMessagePipeline.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CDirectoryFileList.cpp">
+      <Filter>Source Files\System\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CFileContainer.cpp">
+      <Filter>Source Files\System\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CFontFileContainer.cpp">
+      <Filter>Source Files\System\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGameSystemData.cpp">
+      <Filter>Source Files\System\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGameSystemLogic.cpp">
+      <Filter>Source Files\System\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGameSystemRender.cpp">
+      <Filter>Source Files\System\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CKeyboardInput.cpp">
+      <Filter>Source Files\System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CMouseInput.cpp">
+      <Filter>Source Files\System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\ComponentHelper.cpp">
+      <Filter>Source Files\System\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUIManager.cpp">
+      <Filter>Source Files\System\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUIMenu.cpp">
+      <Filter>Source Files\System\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\SystemHelper.cpp">
+      <Filter>Source Files\System\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\MemoryHelper.cpp">
+      <Filter>Source Files\System\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\StringHelper.cpp">
+      <Filter>Source Files\System\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\FileHelper.cpp">
+      <Filter>Source Files\System\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CWindow.cpp">
+      <Filter>Source Files\System\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CD3DGraphics.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CFont.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGraphicsInitBuffer.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CShader.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CShaderOrthographic.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSprite.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSurface.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CTextRenderer.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CTexture.cpp">
+      <Filter>Source Files\GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGameobject.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGameobjectList.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGameScene.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CTransform.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CVector3.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CVector4.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CVector2.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUIListItem.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUIControl.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUIList.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUITextIO.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUICheckBox.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CSourceAnalyser.cpp">
+      <Filter>Source Files\System\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUIContainer.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CCompActorAnim.cpp">
+      <Filter>Source Files\Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CCompAnimController.cpp">
+      <Filter>Source Files\Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CAnimation.cpp">
+      <Filter>Source Files\Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGMOBJFileContainer.cpp">
+      <Filter>Source Files\System\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CGMOBJFileComponentLoader.cpp">
+      <Filter>Source Files\System\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CCompAnimEditor.cpp">
+      <Filter>Source Files\Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="_src\CUISlider.cpp">
+      <Filter>Source Files\System\UI\Controls</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

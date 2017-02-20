@@ -1,0 +1,22 @@
+#pragma once
+
+#include <xstring>
+
+#define COMP_ID_CNULL			"NULL"
+#define COMP_ID_CACTORANIM		"CACTORANIM"
+#define COMP_ID_CANIMCONTROL	"CANIMCONTROL"
+#define COMP_ID_CANIMEDITOR		"CANIMEDITOR"
+
+enum COMPONENTID
+{
+	CERROR = -1,
+	CNULL,
+	CACTORANIM, 
+	CANIMCONTROL,
+	CANIMEDITOR
+};
+
+namespace COMPONENT
+{
+	COMPONENTID GetType(char* strID);
+}

@@ -1,0 +1,13 @@
+#pragma once
+
+#define _SM_NO_MSG 0
+#define _SM_WINDOW_RESIZE 1
+#define _SM_QUIT_GAME 2
+#define _SM_QUIT_GAME_ERROR 3
+#define _SM_WINDOW_CREATED 4
+
+#define _SM_SUB_BT_PRESSED 9999
+#define _SM_SUB_BT_RELEASED 9998
+#define _SM_SUB_BT_HOVER 9997
+
+#define _SM_UI_SELECTION_CHANGE 8999
