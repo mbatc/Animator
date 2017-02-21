@@ -54,6 +54,7 @@ private:
 
 	void AddKeyframe();
 	void DeleteKeyframe();
+	void DuplicateKeyframe();
 
 	char* OpenSaveDialog();
 	char* OpenLoadDialog();

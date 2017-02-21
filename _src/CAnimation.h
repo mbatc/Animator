@@ -37,7 +37,7 @@ public:
 	SKEYFRAME* GetKeyframe(CANIM a, int i);
 	int GetKeyframeIndex(SKEYFRAME* kf);
 
-	SKEYFRAME GetKeyframe(int i) { return m_pKeyframe[i]; }
+	SKEYFRAME* GetKeyframe(int i) { return &m_pKeyframe[i]; }
 	float GetLength() { return m_end_time; }
 
 	void DeleteKeyframe(int index);

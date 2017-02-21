@@ -38,6 +38,11 @@ void CUITextIO::OnUpdate()
 		m_indicator = !m_indicator;
 		m_timer = 0;
 	}
+
+	if (KEYBOARD::IsDown(VK_RETURN))
+	{
+		OnClickAway();
+	}
 }
 
 void CUITextIO::OnRender()

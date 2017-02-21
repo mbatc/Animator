@@ -155,6 +155,14 @@ void CAnimation::SetLength(float t)
 
 void CAnimation::AddKeyframe(SKEYFRAME f)
 {
+	for(int i = 0; i < m_nKeyframe; i++)
+	{ 
+		if (m_pKeyframe[i].m_body == f.m_body && m_pKeyframe[i].m_time == f.m_time)
+		{
+			m_pKeyframe[i].m_rotation = f.m_rotation;
+			return;
+		}
+	}
 	MEMORY::LIST::AddToList(m_pKeyframe, &f, m_nKeyframe);
 }
 
