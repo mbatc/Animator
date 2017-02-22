@@ -15,6 +15,7 @@
 #define UI_PROP_TIME		0x2003u
 #define UI_PROP_CURTIME		0x2004u
 #define UI_PROP_PLAY		0x2005u
+#define UI_PROP_LOOP		0x2006u
 
 #define UI_SAVE_MENU		0x3000u
 #define UI_SAVE_BT			0x3001u
@@ -27,6 +28,7 @@
 #define UI_KEYFRAME_ROT		0x4004u
 #define UI_KEYFRAME_TIME	0x4005u
 #define UI_KEYFRAME_LIST	0x4006u
+
 
 class CCompAnimEditor : public CComponent
 {

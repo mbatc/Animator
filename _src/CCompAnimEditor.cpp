@@ -46,7 +46,7 @@ void CCompAnimEditor::InitUI()
 
 		m_pPivotList->AddListItem(l);
 	}
-	r.left = 0; r.right = SYSTEM::GetWindowWidth() * 0.2f; r.top = SYSTEM::GetWindowHeight() * 0.8f; r.bottom = SYSTEM::GetWindowHeight();
+	r.left = 0; r.right = SYSTEM::GetWindowWidth() * 0.2f; r.top = SYSTEM::GetWindowHeight() * 0.7f; r.bottom = SYSTEM::GetWindowHeight();
 
 	int width = r.right; int height = r.bottom - r.top;
 	m_pAnimProp = CSystem::g_uiManager.AddMenu(CSystem::m_gfx, UI_PROP_MENU,r);
@@ -57,7 +57,7 @@ void CCompAnimEditor::InitUI()
 	c->Clip(true);
 	c->SetText("New Animation");
 	
-	r.top = r.bottom + 4; r.bottom += height * 0.3f; r.right = width * 0.7f;
+	r.top = r.bottom + 4; r.bottom += height * 0.20f; r.right = width * 0.7f;
 	CUISlider* s= (CUISlider*)m_pAnimProp->AddControl(UI_PROP_TIME, r, new CUISlider());
 	s->SetMaxValue(3.0f);
 	s->SetSliderPosition(0.5f);
@@ -67,7 +67,7 @@ void CCompAnimEditor::InitUI()
 	c->RenderBorder(true);
 	c->Clip(true);
 
-	r.top = r.bottom + 4; r.bottom += height*0.3f; r.left = width*0.1f; r.right = width* 0.7f;
+	r.top = r.bottom + 4; r.bottom += height*0.2f; r.left = width*0.1f; r.right = width* 0.7f;
 	c = m_pAnimProp->AddControl(UI_PROP_PLAY, r, new CUIControl);
 	c->SetText("PLAY");
 	c->Clip(true);
@@ -76,6 +76,11 @@ void CCompAnimEditor::InitUI()
 	c = m_pAnimProp->AddControl(UI_PROP_LENGTH, r, new CUITextIO());
 	c->RenderBorder(true);
 	c->Clip(true);
+
+	r.left = width*0.1f; r.top = r.bottom + 4; r.bottom += CSystem::g_textRenderer.GetActiveFont().GetFontHeight() + 4;
+	c = m_pAnimProp->AddControl(UI_PROP_LOOP, r, new CUICheckBox());
+	c->SetText("Loop Animation");
+
 
 	r.top = 0; r.bottom = 32; r.left = SYSTEM::GetWindowWidth() / 2 - 32; r.right = r.left + 32 * 2;
 	m_pSaveMenu = CSystem::g_uiManager.AddMenu(CSystem::m_gfx, UI_SAVE_MENU, r);
@@ -116,10 +121,12 @@ void CCompAnimEditor::InitUI()
 	r.right = width*0.5f - 4;
 	c = m_pPivotProp->AddControl(UI_KEYFRAME_TIME, r, new CUITextIO);
 	c->SetText("");
+	c->Clip(true);
 
 	r.left = r.right + 4; r.right = SYSTEM::GetWindowWidth() * 0.18f;
 	c = m_pPivotProp->AddControl(UI_KEYFRAME_ROT, r, new CUITextIO);
 	c->SetText("");
+	c->Clip(true);
 
 	r.top = SYSTEM::GetWindowHeight() * 0.05f; r.bottom = SYSTEM::GetWindowHeight()*0.75f;
 	r.left = SYSTEM::GetWindowWidth() * 0.02f;
@@ -131,6 +138,7 @@ void CCompAnimEditor::InitUI()
 void CCompAnimEditor::Update(float deltaTime)
 {
 	bool bFollow = false;
+	m_pController->Loop(((CUICheckBox*)m_pAnimProp->GetControl(UI_PROP_LOOP))->GetState());
 	if (MOUSE::IsRightMousePressed())
 	{
 		for (int i = 0; i < NPIVOTS; i++)
@@ -454,6 +462,7 @@ void CCompAnimEditor::OnPivotChange()
 	int nFrames = m_pAnimation->GetNKeyframe(a);
 	SKEYFRAME* pFrames = new SKEYFRAME[nFrames];
 	int*		pIndex = new int[nFrames];
+
 	for (int i = 0, ii = 0; i < m_pAnimation->GetTotalKeyframeCount(); i++)
 	{
 		SKEYFRAME p = *m_pAnimation->GetKeyframe(i);
@@ -467,18 +476,34 @@ void CCompAnimEditor::OnPivotChange()
 
 	for (int i = 0; i < nFrames; i++)
 	{
-		int newID = i;
 		SKEYFRAME temp = pFrames[i];
-		int index = pIndex[i];
+		int temp_index = pIndex[i];
+		int new_i = i;
 		for (int ii = 0; ii < nFrames; ii++)
 		{
-			if (temp.m_time > pFrames[ii].m_time && newID < ii)
+			if (ii > new_i)
 			{
-				pFrames[newID] = pFrames[ii];
-				pFrames[ii] = temp;
-				pIndex[newID] = pIndex[ii];
-				pIndex[ii] = index;
-				newID = ii;
+				if (pFrames[new_i].m_time > pFrames[ii].m_time)
+				{
+					if (new_i == i)
+						i--;
+					pFrames[new_i] = pFrames[ii];
+					pIndex[new_i] = pIndex[ii];
+					pFrames[ii] = temp;
+					pIndex[ii] = temp_index;
+					new_i = ii;
+				}
+			}
+			else if(ii < new_i)
+			{
+				if (pFrames[new_i].m_time < pFrames[ii].m_time)
+				{
+					pFrames[new_i] = pFrames[ii];
+					pIndex[new_i] = pIndex[ii];
+					pFrames[ii] = temp;
+					pIndex[ii] = temp_index;
+					new_i = ii;
+				}
 			}
 		}
 	}
@@ -577,6 +602,7 @@ void CCompAnimEditor::DuplicateKeyframe()
 	if (!m_pFramelist->GetActiveSelection())
 		return;
 	SKEYFRAME kf = *m_pAnimation->GetKeyframe(*(int*)m_pFramelist->GetActiveSelection()->GetData());
+	kf.m_time = ((CUISlider*)(m_pAnimProp->GetControl(UI_PROP_TIME)))->GetSliderValue();
 	m_pAnimation->AddKeyframe(kf);
 
 	OnPivotChange();
@@ -669,6 +695,10 @@ void CCompAnimEditor::UIMANAGER_MSG_PROC(UINT msg, UINT subMsg)
 	case UI_DELETE_FRAME_BT:
 		if (subMsg == _SM_SUB_BT_PRESSED)
 			DeleteKeyframe();
+		break;
+	case UI_DUP_FRAME_BT:
+		if (subMsg == _SM_SUB_BT_PRESSED)
+			DuplicateKeyframe();
 		break;
 	case UI_SAVE_BT:
 		if (subMsg == _SM_SUB_BT_PRESSED)
