@@ -88,6 +88,7 @@ namespace MEMORY
 			nt--;
 
 			MEMORY::SafeDeleteArr(t);
+			t = temp;
 		}
 		
 		template<class T> void RemoveItem(T*& t, int& nt, int remove_i)
@@ -105,6 +106,7 @@ namespace MEMORY
 			nt--;
 
 			MEMORY::SafeDeleteArr(t);
+			t = temp;
 		}
 	}
 

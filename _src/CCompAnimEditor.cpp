@@ -156,6 +156,7 @@ void CCompAnimEditor::Update(float deltaTime)
 			{
 				m_pPivotList->SetActiveSelection(m_pPivotList->GetListItem(
 					GetAnimString((CANIM)i)));
+				OnPivotChange();
 				break;
 			}
 		}
@@ -203,8 +204,8 @@ void CCompAnimEditor::Update(float deltaTime)
 	if (m_pFramelist->GetActiveSelection())
 	{
 		CANIM a = GetAnimPart(m_pPivotList->GetActiveSelection()->GetItemName());
-		int index = m_pFramelist->GetActiveIndex();
-		SKEYFRAME* kf = m_pAnimation->GetKeyframe(a, index);
+		int index = *(int*)m_pFramelist->GetActiveSelection()->GetData();
+		SKEYFRAME* kf = m_pAnimation->GetKeyframe(index);
 		CUITextIO* t = (CUITextIO*)m_pPivotProp->GetControl(UI_KEYFRAME_ROT);
 
 		if (t->IsActive())
@@ -413,17 +414,18 @@ void CCompAnimEditor::Save()
 		if (!m_pFilename)
 			return;
 	}
-
-	temp = STRING::ScanFromEnd(m_pFilename, "\\");
-	
-	if (strcmp(&temp[1], filename))
+	else
 	{
-		MEMORY::SafeDeleteArr(m_pFilename);
-		m_pFilename = OpenSaveDialog();
-		if (!m_pFilename)
-			return;
-	}
+		temp = STRING::ScanFromEnd(m_pFilename, "\\");
 
+		if (strcmp(&temp[1], filename))
+		{
+			MEMORY::SafeDeleteArr(m_pFilename);
+			m_pFilename = OpenSaveDialog();
+			if (!m_pFilename)
+				return;
+		}
+	}
 	FILE* pFile = fopen(m_pFilename, "w");
 
 	if (!pFile)
@@ -561,13 +563,22 @@ void CCompAnimEditor::OnKeyframeChange()
 void CCompAnimEditor::AddKeyframe()
 {
 	CUISlider* s = (CUISlider*)m_pAnimProp->GetControl(UI_PROP_TIME);
-
+	bool addAll = KEYBOARD::IsDown(VK_CONTROL);
+	
 	for (int i = 0; i < NPIVOTS; i++)
 	{
-		if (m_pController->GetAnimRotation((CANIM)i, s->GetSliderValue()) != 
-			m_pActor->GetPivot((CANIM)i)->m_rotation || 
+		if (!m_pAnimation->GetNKeyframe((CANIM)i))
+		{
+			SKEYFRAME kf;
+			kf.m_rotation = m_pActor->GetPivot((CANIM)i)->m_rotation;
+			kf.m_time = s->GetSliderValue();
+			kf.m_body = (CANIM)i;
 
-			m_pAnimation->GetTime() != s->GetSliderValue())
+			m_pAnimation->AddKeyframe(kf);
+		}
+
+		if (m_pController->GetAnimRotation((CANIM)i, s->GetSliderValue()) != 
+			m_pActor->GetPivot((CANIM)i)->m_rotation || addAll)
 		{
 			SKEYFRAME kf;
 			kf.m_rotation = m_pActor->GetPivot((CANIM)i)->m_rotation;
@@ -588,10 +599,9 @@ void CCompAnimEditor::DeleteKeyframe()
 	if (!m_pFramelist->GetActiveSelection())
 		return;
 
-	CANIM a = GetAnimPart(m_pPivotList->GetActiveSelection()->GetItemName());
-	int index = m_pFramelist->GetActiveIndex();
+	int index = *(int*)m_pFramelist->GetActiveSelection()->GetData();
 
-	int kf_index = m_pAnimation->GetKeyframeIndex(m_pAnimation->GetKeyframe(a, index));
+	int kf_index = m_pAnimation->GetKeyframeIndex(m_pAnimation->GetKeyframe(index));
 
 	m_pAnimation->DeleteKeyframe(kf_index);
 	OnPivotChange();

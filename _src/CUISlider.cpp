@@ -59,7 +59,7 @@ void CUISlider::OnInit(RECT r, UINT id, char* active, char* inactive)
 	m_bar = CSystem::m_gfx.DEFAULTSPRITE;
 	m_slider = CSystem::m_gfx.DEFAULTSPRITE;
 
-	m_slider.Resize(6, GetRect().bottom - GetRect().top);
+	m_slider.Resize(15, (GetRect().bottom - GetRect().top)/2);
 	m_bar.Resize(GetRect().right - GetRect().left, 2);
 
 	m_slider.SetColor(0.8f, 0.8f, 0.8f, 1.0f);
@@ -102,7 +102,7 @@ void CUISlider::OnUpdate()
 	if (m_slider_position < 0.0f) m_slider_position = 0.0f;
 
 	slider_x = GetGlobalX() + m_slider_position * GetWidth();
-	slider_y = GetGlobalY();
+	slider_y = GetGlobalY() + GetHeight()/4;
 }
 
 void CUISlider::OnPressed()
@@ -113,8 +113,8 @@ void CUISlider::OnPressed()
 	RECT s;
 	s.top = slider_y;
 	s.bottom = slider_y + m_slider.GetHeight();
-	s.left = slider_x - m_slider.GetWidth() / 2;
-	s.right = slider_x + m_slider.GetWidth() / 2;
+	s.left = slider_x - m_slider.GetWidth();
+	s.right = slider_x + m_slider.GetWidth();
 
 	if (mx > s.left && mx < s.right && my > s.top && my < s.bottom)
 	{
